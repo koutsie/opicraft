@@ -1,2 +1,2 @@
 # opicraft
-Configs for an Minecraft server on a Sinlge Board Computer.
+Configurations and other stuff for OPiCraft.
