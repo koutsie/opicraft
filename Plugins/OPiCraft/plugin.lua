@@ -1,19 +1,17 @@
 function Initialize(Plugin)
 	Plugin:SetName("OPiCraftHelper")
-	Plugin:SetVersion(6)
+	Plugin:SetVersion(7)
 	
 	-- Register Global Variables
-	-- Old, used for debugging: LOGINFO	("Global Gvar set.")
+	-- Old LOG(), used for debugging: LOGINFO	("Global Gvar set.")
 	g_PlayerDeathRecord = {}
 
 	-- Register hooks
 	cPluginManager:AddHook(cPluginManager.HOOK_KILLED, OnKilled);
 	cPluginManager:AddHook(cPluginManager.HOOK_SPAWNED_MONSTER, MyOnSpawnedMonster);
-	-- Not used yet: cPluginManager:AddHook(cPluginManager.HOOK_KILLING, OnKilling);
 	cPluginManager:AddHook(cPluginManager.HOOK_CHUNK_GENERATED, MyOnChunkGenerated);
 	
 	--- Register commands
-	
 	cPluginManager.BindCommand("/stats", "getstat.stat", Stats, " Get Stats");
 	cPluginManager.BindCommand("/kicku", "getstat.kickall", Kall, " Kick yourself");
     cPluginManager.BindCommand("/rq", "getstat.kickall", Kall, " Kick yourself");
@@ -41,9 +39,9 @@ end
 
 -- Ragequit command.
 function Kall(Split, Player)
-		Player:GetClientHandle():Kick(Reason)
 		cRoot:Get():BroadcastChat(cChatColor.LightBlue .. "[Ragequit] " .. cChatColor.White .. Player:GetName() .. " wanted to take a breather.") 
 		Reason = "§6§lWelcome back to reality."	
+		Player:GetClientHandle():Kick(Reason)
 		return true;
 end
 
@@ -68,9 +66,10 @@ if not Victim:IsPlayer() then
 		else
 			--Used for debugging, left here as a note: LOGWARN("The player died, crash log or timestamp below:")
 			local aliveforreal = GetTimeAlive(Victim);
+			local aliveforreal = os.date('%H:%M:%S', (aliveforreal / 20)) -- TYSM sarcastic_cat ! 
 			g_PlayerDeathRecord[Victim:GetUniqueID()] = Victim:GetTicksAlive();
-			cRoot:Get():BroadcastChat(cChatColor.Yellow .. "Player " .. Victim:GetName() .. " died")
-			cRoot:Get():BroadcastChat(cChatColor.Rose .. "[Info] They were alive for: " .. aliveforreal .. " ticks")
+			cRoot:Get():BroadcastChat(cChatColor.Gold .. "[Info]" .. cChatColor.White .. "Player " .. Victim:GetName() .. " died")
+			cRoot:Get():BroadcastChat(cChatColor.Gold .. "[Info]" .. cChatColor.White .. "They were alive for " .. cChatColor.Rose .. aliveforreal .. " since starting this session")
 			Victim:GetWorld():CastThunderbolt(Victim:GetPosition().x, Victim:GetPosition().y, Victim:GetPosition().z);
 
 			-- This was for debugging, not really needed for now.
