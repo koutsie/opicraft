@@ -10,7 +10,8 @@ Configurations and other stuff for OPiCraft running on Cuberite.
 ### Plugins list:
 - BossBarCompass
 > This plugin shows your current position in the world on an boss bar.
-> ![image](https://user-images.githubusercontent.com/18449778/110787260-cef6d700-8275-11eb-9873-9ac5fd27fa68.png)
+> ![image](https://user-images.githubusercontent.com/18449778/111003688-4c166f00-8390-11eb-998b-19d2ca9e7602.png)
+
 
 - OPiCraftHelper
 > This is plugin provides a lof of the things used in OPiCraft like DeathTicks, a ragequit command & more.
