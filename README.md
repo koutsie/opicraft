@@ -6,8 +6,7 @@ Configurations and other stuff for OPiCraft running on Cuberite.
 - [X] A stats command that shows the current server cpu frequenzy, ram usage & uptime. (Todo of this todo: Add world size to this as its already known).
 - [ ] Automatic Cuberite update checking & building.
 - [X] Server startup script that broadcasts info to a Discord webhook.
-- [X] Convert GetTimeAlive() from ticks to HH:MM:SS ~~(Help needed)~~ Thanks sarcastic_cat !.
-
+- [X] Convert GetTimeAlive() from ticks to HH:MM:SS ~~(Help needed)~~ Thanks sarcastic_cat !
 
 ### Plugins list:
 - BossBarCompass
