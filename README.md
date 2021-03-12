@@ -1,4 +1,6 @@
 # opicraft
+[![HitCount](http://hits.dwyl.com/koutsie/koutsie.svg)](http://hits.dwyl.com/koutsie/opicraft)
+
 Configurations and other stuff for OPiCraft running on Cuberite.
 ### Todo:
 - [ ] OPiCraftHelper update checker.
