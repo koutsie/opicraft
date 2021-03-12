@@ -1,15 +1,15 @@
 function Initialize(Plugin)
 	Plugin:SetName("OPiCraftHelper")
-	Plugin:SetVersion(5)
+	Plugin:SetVersion(6)
 	
 	-- Register Global Variables
-	LOGINFO	("Global Gvar set.")
+	-- Old, used for debugging: LOGINFO	("Global Gvar set.")
 	g_PlayerDeathRecord = {}
 
 	-- Register hooks
 	cPluginManager:AddHook(cPluginManager.HOOK_KILLED, OnKilled);
 	cPluginManager:AddHook(cPluginManager.HOOK_SPAWNED_MONSTER, MyOnSpawnedMonster);
-	cPluginManager:AddHook(cPluginManager.HOOK_KILLING, OnKilling);
+	-- Not used yet: cPluginManager:AddHook(cPluginManager.HOOK_KILLING, OnKilling);
 	cPluginManager:AddHook(cPluginManager.HOOK_CHUNK_GENERATED, MyOnChunkGenerated);
 	
 	--- Register commands
@@ -20,6 +20,7 @@ function Initialize(Plugin)
     cPluginManager.BindCommand("rq", "getstat.kickall", Kall, " Kick yourself");
     
 	LOG("Initialised " .. Plugin:GetName() .. " v." .. Plugin:GetVersion())
+	LOGINFO("No updates checked, not implemented.")
 	return true
 end
 
@@ -60,7 +61,7 @@ end
 
 -- Custom public death message, time alive and thunderbolt.
 function OnKilled(Victim, TDI, DeathMessage)
-print(Victim:IsPlayer())
+-- Old, used for debugging: print(Victim:IsPlayer())
 if not Victim:IsPlayer() then
 			-- LOGINFO("ENTITY " .. Victim:GetClass() .. " died")
 			-- cRoot:Get():BroadcastChat(cChatColor.Yellow .. "ENTITY " .. Victim:GetClass() .. " died")
@@ -68,7 +69,7 @@ if not Victim:IsPlayer() then
 			--Used for debugging, left here as a note: LOGWARN("The player died, crash log or timestamp below:")
 			local aliveforreal = GetTimeAlive(Victim);
 			g_PlayerDeathRecord[Victim:GetUniqueID()] = Victim:GetTicksAlive();
-			cRoot:Get():BroadcastChat(cChatColor.Yellow .. "Player " .. Victim:GetClass() .. " died")
+			cRoot:Get():BroadcastChat(cChatColor.Yellow .. "Player " .. Victim:GetName() .. " died")
 			cRoot:Get():BroadcastChat(cChatColor.Rose .. "[Info] They were alive for: " .. aliveforreal .. " ticks")
 			Victim:GetWorld():CastThunderbolt(Victim:GetPosition().x, Victim:GetPosition().y, Victim:GetPosition().z);
 
@@ -86,7 +87,7 @@ function GetTimeAlive(Player)
   -- LOGINFO("[INFO] UUID:" .. uniqueId)
   local lastDeath = g_PlayerDeathRecord[uniqueId];
   if (lastDeath) then
-	LOGINFO("Return " .. Player:GetTicksAlive() - lastDeath);
+	-- LOGINFO("Return " .. Player:GetTicksAlive() - lastDeath);
     return Player:GetTicksAlive() - lastDeath
   else
 	-- LOGINFO	("Return " .. Player:GetTicksAlive())
