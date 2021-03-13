@@ -17,7 +17,7 @@ Configurations and other stuff for OPiCraft running on Cuberite.
 - OPiCraftHelper
 > This is plugin provides a lof of the things used in OPiCraft like DeathTicks, a ragequit command & more.
 > #### Example of the custom death message:
-> ![image](https://user-images.githubusercontent.com/18449778/111002281-d4474500-838d-11eb-8aec-4f5d6d16a1d0.png)
+> ![yes](https://user-images.githubusercontent.com/18449778/111035954-7403e200-8425-11eb-8f4c-c66494a54bed.png)
 > #### Ragequit command:
 > ![image](https://user-images.githubusercontent.com/18449778/111003459-da3e2580-838f-11eb-972a-bef1717872e5.png)
 
