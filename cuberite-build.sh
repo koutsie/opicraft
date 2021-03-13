@@ -17,10 +17,11 @@ commit_msg=$(git show-branch --no-name)
 # Shut down the server safely for updates & kill the screen session its running on.
 	mcrcon -H $server_ip -p $spasswd "say §4 [Warning] §7 Server updating in 10 seconds!"
 	mcrcon -H $server_ip -p $spasswd "say §3 $commit_msg"
+	sleep 10 # Let users brace themselfs for a bit.
 	mcrcon -H $server_ip -p $spasswd "save-all"
 	mcrcon -H $server_ip -p $spasswd "stop"
-  sync # No, I don't trust my SD card.
-  sleep 10  # Let it brace itself for a bit.
+  	sync # No, I don't trust my SD card.
+  	sleep 10  # Let it brace itself for a bit.
 	screen -X -S "mcserver" quit # Let's stop the screen already !
 	git pull # If local and repo version don't match >> pull from repo.
 
