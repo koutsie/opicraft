@@ -1,4 +1,4 @@
-# opicraft
+# opicraft 🍊
 
 Configurations and other stuff for OPiCraft running on Cuberite.
 ### Todo:
