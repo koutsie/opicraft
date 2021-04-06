@@ -1,5 +1,8 @@
 # opicraft 🍊
 
+[![Hits-of-Code](https://hitsofcode.com/github/koutsie/opicraft)](https://hitsofcode.com/github/koutsie/opicraft/view)
+
+
 Configurations and other stuff for OPiCraft running on Cuberite.
 ### Todo:
 - [ ] OPiCraftHelper update checker.
