@@ -1,5 +1,5 @@
 # opicraft 🍊
-
+![Maintenance](https://img.shields.io/maintenance/no/2021)
 [![Hits-of-Code](https://hitsofcode.com/github/koutsie/opicraft)](https://hitsofcode.com/github/koutsie/opicraft/view)
 
 
